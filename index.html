@@ -127,7 +127,7 @@
 
       <div class="info-list">
         <p><span class="label">Ausweis-Nr.:</span> ZH-SEC-27491683</p>
-        <p><span class="label">Verifiziert am:</span> <span id="datum"></span>, <span id="uhrzeit"></span>&nbsp;Uhr</p>
+        <p><span class="label">Verifiziert am:</span> <span id="veri"></span></p>
         <p><span class="label">Status:</span> <span style="color: green;">gültig</span></p>
       </div>
     </div>
@@ -154,8 +154,9 @@
     const stunde = String(now.getHours()).padStart(2, '0');
     const minute = String(now.getMinutes()).padStart(2, '0');
 
-    document.getElementById("datum").innerText = `${wochentag} ${tag}. ${monat} ${jahr}`;
-    document.getElementById("uhrzeit").innerText = `${stunde}:${minute}`;
+    // geschütztes Leerzeichen vor "Uhr" (\u00A0) hält alles in einer Zeile
+    const verifiziert = `${wochentag} ${tag}. ${monat} ${jahr}, ${stunde}:${minute}\u00A0Uhr`;
+    document.getElementById("veri").innerText = verifiziert;
   </script>
 
 </body>
