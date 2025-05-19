@@ -90,7 +90,7 @@
       text-align: left;
     }
 
-    .info-list span {
+    .info-list span.label {
       font-weight: bold;
       display: inline-block;
       width: 120px;
@@ -126,9 +126,9 @@
       <p>Die vorgelegte Identifikation entspricht einem gültigen Sicherheitsausweis nach kantonalem Standard.</p>
 
       <div class="info-list">
-        <p><span>Ausweis-Nr.:</span> ZH-SEC-27491683</p>
-        <p><span>Verifiziert am:</span> <span id="timestamp"></span></p>
-        <p><span>Status:</span> <span style="color: green;">gültig</span></p>
+        <p><span class="label">Ausweis-Nr.:</span> ZH-SEC-27491683</p>
+        <p><span class="label">Verifiziert am:</span> <span id="datum"></span>, <span id="uhrzeit"></span> Uhr</p>
+        <p><span class="label">Status:</span> <span style="color: green;">gültig</span></p>
       </div>
     </div>
   </div>
@@ -140,24 +140,22 @@
   <script>
     const now = new Date();
 
-    // Datum formatieren (z. B. Mo., 20. Mai 2025)
-    const dateOptions = {
-      weekday: 'short',
-      day: '2-digit',
-      month: 'long',
-      year: 'numeric'
-    };
-    const date = new Intl.DateTimeFormat('de-CH', dateOptions).format(now);
+    const wochentage = ["So.", "Mo.", "Di.", "Mi.", "Do.", "Fr.", "Sa."];
+    const monate = [
+      "Januar", "Februar", "März", "April", "Mai", "Juni",
+      "Juli", "August", "September", "Oktober", "November", "Dezember"
+    ];
 
-    // Uhrzeit formatieren (z. B. 10:38)
-    const timeOptions = {
-      hour: '2-digit',
-      minute: '2-digit'
-    };
-    const time = new Intl.DateTimeFormat('de-CH', timeOptions).format(now);
+    const tag = String(now.getDate()).padStart(2, '0');
+    const monat = monate[now.getMonth()];
+    const jahr = now.getFullYear();
+    const wochentag = wochentage[now.getDay()];
 
-    // Ergebnis einfügen
-    document.getElementById("timestamp").innerText = `${date}, ${time} Uhr`;
+    const stunde = String(now.getHours()).padStart(2, '0');
+    const minute = String(now.getMinutes()).padStart(2, '0');
+
+    document.getElementById("datum").innerText = `${wochentag} ${tag}. ${monat} ${jahr}`;
+    document.getElementById("uhrzeit").innerText = `${stunde}:${minute}`;
   </script>
 
 </body>
