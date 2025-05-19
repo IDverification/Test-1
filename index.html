@@ -3,30 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Verifizierung Sicherheitsausweis</title>
+  <title>Sicherheitsausweis-Verifizierung</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #f5f7f9, #d9dee2);
-      color: #000;
+      font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+      background: linear-gradient(to bottom, #f2f4f7, #d9dee2);
+      color: #111;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
     header {
-      background-color: #002b55;
+      background: #002b55;
       color: white;
-      text-align: center;
-      padding: 25px 15px;
-      border-bottom: 4px solid #005fa3;
+      padding: 25px 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-bottom: 4px solid #0074c4;
     }
 
-    header h1 {
+    .logo {
+      width: 40px;
+      height: 50px;
+    }
+
+    .header-text h1 {
       margin: 0;
-      font-size: 22px;
-      letter-spacing: 1px;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .header-text p {
+      margin: 2px 0 0;
+      font-size: 13px;
+      color: #d3e1f1;
     }
 
     .content {
@@ -34,28 +47,23 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      padding: 50px 20px;
+      padding: 40px 20px;
     }
 
     .message-box {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      font-weight: bold;
       background: white;
-      padding: 20px 30px;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
     }
 
     .checkmark {
+      font-size: 34px;
       color: green;
-      font-size: 30px;
-      margin-right: 14px;
-      animation: pop 0.4s ease-out;
-      transform-origin: center;
+      animation: pop 0.3s ease-out;
     }
 
     @keyframes pop {
@@ -63,9 +71,34 @@
       100% { transform: scale(1); opacity: 1; }
     }
 
+    .message-box h2 {
+      margin-top: 15px;
+      font-size: 20px;
+      color: #222;
+    }
+
+    .message-box p {
+      font-size: 14px;
+      color: #444;
+      margin-top: 10px;
+    }
+
+    .info-list {
+      font-size: 13px;
+      margin-top: 20px;
+      color: #333;
+      text-align: left;
+    }
+
+    .info-list span {
+      font-weight: bold;
+      display: inline-block;
+      width: 120px;
+    }
+
     .footer {
-      background: #000;
-      color: #ccc;
+      background: #1a1a1a;
+      color: #bbb;
       text-align: center;
       padding: 12px;
       font-size: 13px;
@@ -75,18 +108,34 @@
 <body>
 
   <header>
-    <h1>Verifizierungsdienst – Sicherheitsausweisprüfung</h1>
+    <!-- Kleines SVG-Zürich-Wappen -->
+    <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="0,0 100,0 100,100" fill="#0074c4"/>
+      <polygon points="0,0 0,100 100,100" fill="#ffffff"/>
+      <rect width="100" height="100" fill="none" stroke="#000" stroke-width="4"/>
+    </svg>
+    <div class="header-text">
+      <h1>Verifizierungsstelle Sicherheitsdienste</h1>
+      <p>Prüfsystem Zürich · Zugriff nur autorisierten Stellen erlaubt</p>
+    </div>
   </header>
 
   <div class="content">
     <div class="message-box">
-      <span class="checkmark">✅</span>
-      <span>Dieser Sicherheitsausweis wurde erfolgreich verifiziert.</span>
+      <div class="checkmark">✅</div>
+      <h2>Sicherheitsausweis erfolgreich verifiziert</h2>
+      <p>Die vorgelegte Identifikation entspricht einem gültigen Sicherheitsausweis nach kantonalem Standard.</p>
+
+      <div class="info-list">
+        <p><span>Ausweis-Nr.:</span> ZH-SEC-874563</p>
+        <p><span>Verifiziert am:</span> 19. Mai 2025, 14:37 Uhr</p>
+        <p><span>Status:</span> <span style="color: green;">gültig</span></p>
+      </div>
     </div>
   </div>
 
   <div class="footer">
-    © 2025 Verifizierungsdienst Zürich
+    © 2025 Verifizierungsdienst Zürich – Interne Prüfplattform für Sicherheitsausweise
   </div>
 
 </body>
