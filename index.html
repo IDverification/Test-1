@@ -81,6 +81,7 @@
       font-size: 14px;
       color: #444;
       margin-top: 10px;
+      text-align: left;
     }
 
     .info-list {
@@ -90,10 +91,12 @@
       text-align: left;
     }
 
+    .info-list p {
+      margin: 4px 0;
+    }
+
     .info-list span.label {
       font-weight: bold;
-      display: inline-block;
-      width: 90px; /* <- HIER VERKLEINERT */
     }
 
     .footer {
@@ -127,7 +130,7 @@
 
       <div class="info-list">
         <p><span class="label">Ausweis-Nr.:</span> ZH-SEC-27491683</p>
-        <p><span class="label">Verifiziert am:</span> <span id="veri"></span></p>
+        <p id="veri"></p>
         <p><span class="label">Status:</span> <span style="color: green;">gültig</span></p>
       </div>
     </div>
@@ -150,12 +153,11 @@
     const monat = monate[now.getMonth()];
     const jahr = now.getFullYear();
     const wochentag = wochentage[now.getDay()];
-
     const stunde = String(now.getHours()).padStart(2, '0');
     const minute = String(now.getMinutes()).padStart(2, '0');
 
-    const verifiziert = `${wochentag} ${tag}. ${monat} ${jahr}, ${stunde}:${minute}\u00A0Uhr`;
-    document.getElementById("veri").innerText = verifiziert;
+    const fullLine = `Verifiziert am: ${wochentag} ${tag}. ${monat} ${jahr}, ${stunde}:${minute}\u00A0Uhr`;
+    document.getElementById("veri").innerText = fullLine;
   </script>
 
 </body>
