@@ -95,10 +95,6 @@
       margin: 4px 0;
     }
 
-    .info-list span.label {
-      font-weight: bold;
-    }
-
     .footer {
       background: #1a1a1a;
       color: #bbb;
@@ -129,9 +125,9 @@
       <p>Die vorgelegte Identifikation entspricht einem gültigen Sicherheitsausweis nach kantonalem Standard.</p>
 
       <div class="info-list">
-        <p><span class="label">Ausweis-Nr.:</span> ZH-SEC-27491683</p>
-        <p id="veri"></p>
-        <p><span class="label">Status:</span> <span style="color: green;">gültig</span></p>
+        <p><strong>Ausweis-Nr.:</strong> ZH-SEC-27491683</p>
+        <p><strong>Verifiziert am:</strong> <span id="veri"></span></p>
+        <p><strong>Status:</strong> <span style="color: green;">gültig</span></p>
       </div>
     </div>
   </div>
@@ -156,7 +152,7 @@
     const stunde = String(now.getHours()).padStart(2, '0');
     const minute = String(now.getMinutes()).padStart(2, '0');
 
-    const fullLine = `Verifiziert am: ${wochentag} ${tag}. ${monat} ${jahr}, ${stunde}:${minute}\u00A0Uhr`;
+    const fullLine = `${wochentag} ${tag}. ${monat} ${jahr}, ${stunde}:${minute}\u00A0Uhr`;
     document.getElementById("veri").innerText = fullLine;
   </script>
 
