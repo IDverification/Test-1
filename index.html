@@ -93,7 +93,7 @@
     .info-list span.label {
       font-weight: bold;
       display: inline-block;
-      width: 120px;
+      width: 90px; /* <- HIER VERKLEINERT */
     }
 
     .footer {
@@ -154,7 +154,6 @@
     const stunde = String(now.getHours()).padStart(2, '0');
     const minute = String(now.getMinutes()).padStart(2, '0');
 
-    // geschütztes Leerzeichen vor "Uhr" (\u00A0) hält alles in einer Zeile
     const verifiziert = `${wochentag} ${tag}. ${monat} ${jahr}, ${stunde}:${minute}\u00A0Uhr`;
     document.getElementById("veri").innerText = verifiziert;
   </script>
