@@ -138,17 +138,26 @@
   </div>
 
   <script>
-    const options = {
+    const now = new Date();
+
+    // Datum formatieren (z. B. Mo., 20. Mai 2025)
+    const dateOptions = {
       weekday: 'short',
       day: '2-digit',
       month: 'long',
-      year: 'numeric',
+      year: 'numeric'
+    };
+    const date = new Intl.DateTimeFormat('de-CH', dateOptions).format(now);
+
+    // Uhrzeit formatieren (z. B. 10:38)
+    const timeOptions = {
       hour: '2-digit',
       minute: '2-digit'
     };
-    const now = new Date();
-    const formatter = new Intl.DateTimeFormat('de-CH', options);
-    document.getElementById("timestamp").innerText = formatter.format(now);
+    const time = new Intl.DateTimeFormat('de-CH', timeOptions).format(now);
+
+    // Ergebnis einfügen
+    document.getElementById("timestamp").innerText = `${date}, ${time} Uhr`;
   </script>
 
 </body>
