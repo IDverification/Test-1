@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sicherheitsausweis Verifizierung</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Verifizierung Sicherheitsausweis</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #f9f9f9, #e0e0e0);
+      background: linear-gradient(to bottom, #f5f7f9, #d9dee2);
       color: #000;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+    }
+
+    header {
+      background: #002b55;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      border-bottom: 4px solid #005fa3;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: 0.8px;
     }
 
     .content {
@@ -26,8 +40,8 @@
     }
 
     .footer {
-      background: #000;
-      color: #ccc;
+      background: #1a1a1a;
+      color: #bbb;
       text-align: center;
       padding: 15px;
       font-size: 14px;
@@ -54,12 +68,19 @@
   </style>
 </head>
 <body>
+
+  <header>
+    <h1>Verifizierungsdienst Zürich</h1>
+  </header>
+
   <div class="content">
     <span class="checkmark">✅</span>
-    <span>Dieser Sicherheitsausweis wurde erfolgreich verifiziert.</span>
+    <span>Der Sicherheitsausweis wurde erfolgreich geprüft.</span>
   </div>
+
   <div class="footer">
-    © 2025 ID Verification
+    © 2025 Verifizierungsdienst Zürich – Dokumentations- und Prüfplattform
   </div>
+
 </body>
 </html>
